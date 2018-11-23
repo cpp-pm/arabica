@@ -1,0 +1,18 @@
+@PACKAGE_INIT@
+
+include(CMakeFindDependencyMacro)
+
+if("@ARABICA_HAVE_BOOST@")
+    find_dependency(Boost CONFIG)
+endif()
+
+if("@ARABICA_XML_BACKEND@" STREQUAL "USE_EXPAT")
+    find_dependency(EXPAT CONFIG)
+endif()
+
+if("@ARABICA_XML_BACKEND@" STREQUAL "USE_LIBXML2")
+    find_dependency(libxml2 CONFIG)
+endif()
+
+include("${CMAKE_CURRENT_LIST_DIR}/@TARGETS_EXPORT_NAME@.cmake")
+check_required_components("@PROJECT_NAME@")
