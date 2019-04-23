@@ -5,6 +5,12 @@
 
 cmake_minimum_required(VERSION 3.5)
 
+include("cmake/HunterGate.cmake")
+HunterGate(
+  URL "https://github.com/ruslo/hunter/archive/v0.23.56.tar.gz"
+  SHA1 "2c03e917973b3cce45531fd93f046358b9068122"
+)
+
 project(arabica)
 
 # Enable C++11 support
